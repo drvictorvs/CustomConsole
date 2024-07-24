@@ -1,0 +1,1272 @@
+name: po3-utils
+alias: po3
+script: PO3_SKSEFunctions
+help: utilities for reading and manipulating forms
+subs:
+- name: remove-added-spells
+  alias: ras
+  func: RemoveAddedSpells
+  help: removeaddedspells the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: modName
+    type: string
+    help: the modName to be used
+  - name: keywords
+    type: keyword
+    help: the keywords to be used
+  - name: abMatchAll
+    type: bool
+    help: the abMatchAll to be used
+- name: remove-armor-of-type
+  alias: raot
+  func: RemoveArmorOfType
+  help: removearmoroftype the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: afArmorType
+    type: int
+    help: the afArmorType to be used
+  - name: aiSlotsToSkip
+    type: int
+    help: the aiSlotsToSkip to be used
+  - name: abEquippedOnly
+    type: bool
+    help: the abEquippedOnly to be used
+- name: set-actor-refraction
+  alias: sar
+  func: SetActorRefraction
+  help: setactorrefraction the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: afRefraction
+    type: float
+    help: the afRefraction to be used
+- name: set-hair-color
+  alias: shc
+  func: SetHairColor
+  help: sethaircolor the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: akColor
+    type: colorform
+    help: the akColor to be used
+- name: set-head-part-alpha
+  alias: shpa
+  func: SetHeadPartAlpha
+  help: setheadpartalpha the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: aiPartType
+    type: int
+    help: the aiPartType to be used
+  - name: afAlpha
+    type: float
+    help: the afAlpha to be used
+- name: set-head-part-texture-set
+  alias: shpts
+  func: SetHeadPartTextureSet
+  help: setheadparttextureset the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: headpartTXST
+    type: textureset
+    help: the headpartTXST to be used
+  - name: aiType
+    type: int
+    help: the aiType to be used
+- name: set-linear-velocity
+  alias: slv
+  func: SetLinearVelocity
+  help: setlinearvelocity the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: afX
+    type: float
+    help: the afX to be used
+  - name: afY
+    type: float
+    help: the afY to be used
+  - name: afZ
+    type: float
+    help: the afZ to be used
+- name: set-local-gravity-actor
+  alias: slga
+  func: SetLocalGravityActor
+  help: setlocalgravityactor the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: afValue
+    type: float
+    help: the afValue to be used
+  - name: abDisableGravityOnGround
+    type: bool
+    help: the abDisableGravityOnGround to be used
+- name: set-skin-alpha
+  alias: ssa
+  func: SetSkinAlpha
+  help: setskinalpha the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: afAlpha
+    type: float
+    help: the afAlpha to be used
+- name: set-skin-color
+  alias: ssc
+  func: SetSkinColor
+  help: setskincolor the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: akColor
+    type: colorform
+    help: the akColor to be used
+- name: set-soul-trapped
+  alias: sst
+  func: SetSoulTrapped
+  help: setsoultrapped the provided arguments
+  args:
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+  - name: abTrapped
+    type: bool
+    help: the abTrapped to be used
+- name: set-death-item
+  alias: sdi
+  func: SetDeathItem
+  help: setdeathitem the provided arguments
+  args:
+  - name: akBase
+    type: actorbase
+    help: the akBase to be used
+  - name: akLeveledItem
+    type: leveleditem
+    help: the akLeveledItem to be used
+- name: set-footstep-set
+  alias: sfs
+  func: SetFootstepSet
+  help: setfootstepset the provided arguments
+  args:
+  - name: akArma
+    type: armoraddon
+    help: the akArma to be used
+  - name: akFootstepSet
+    type: footstepset
+    help: the akFootstepSet to be used
+- name: set-read-flag
+  alias: srf
+  func: SetReadFlag
+  help: setreadflag the provided arguments
+  args:
+  - name: akBook
+    type: book
+    help: the akBook to be used
+- name: set-lighting-template
+  alias: slt
+  func: SetLightingTemplate
+  help: setlightingtemplate the provided arguments
+  args:
+  - name: akCell
+    type: cell
+    help: the akCell to be used
+  - name: akLightingTemplate
+    type: lightingtemplate
+    help: the akLightingTemplate to be used
+- name: set-cell-north-rotation
+  alias: scnr
+  func: SetCellNorthRotation
+  help: setcellnorthrotation the provided arguments
+  args:
+  - name: akCell
+    type: cell
+    help: the akCell to be used
+  - name: afAngle
+    type: float
+    help: the afAngle to be used
+- name: set-addon-models
+  alias: sam
+  func: SetAddonModels
+  help: setaddonmodels the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: akDebris
+    type: debris
+    help: the akDebris to be used
+- name: set-effect-shader-flag
+  alias: sesf
+  func: SetEffectShaderFlag
+  help: seteffectshaderflag the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: aiFlag
+    type: int
+    help: the aiFlag to be used
+- name: set-membrane-color-key-data
+  alias: smckd
+  func: SetMembraneColorKeyData
+  help: setmembranecolorkeydata the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: aiColorKey
+    type: int
+    help: the aiColorKey to be used
+  - name: aiRGB
+    type: int
+    help: the aiRGB to be used
+  - name: afAlpha
+    type: float
+    help: the afAlpha to be used
+  - name: afTime
+    type: float
+    help: the afTime to be used
+- name: set-membrane-fill-texture
+  alias: smft
+  func: SetMembraneFillTexture
+  help: setmembranefilltexture the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: asTextureName
+    type: string
+    help: the asTextureName to be used
+- name: set-membrane-holes-texture
+  alias: smht
+  func: SetMembraneHolesTexture
+  help: setmembraneholestexture the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: asTextureName
+    type: string
+    help: the asTextureName to be used
+- name: set-membrane-palette-texture
+  alias: smpt
+  func: SetMembranePaletteTexture
+  help: setmembranepalettetexture the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: asTextureName
+    type: string
+    help: the asTextureName to be used
+- name: set-particle-color-key-data
+  alias: spckd
+  func: SetParticleColorKeyData
+  help: setparticlecolorkeydata the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: aiColorKey
+    type: int
+    help: the aiColorKey to be used
+  - name: aiRGB
+    type: int
+    help: the aiRGB to be used
+  - name: afAlpha
+    type: float
+    help: the afAlpha to be used
+  - name: afTime
+    type: float
+    help: the afTime to be used
+- name: set-particle-full-count
+  alias: spfc
+  func: SetParticleFullCount
+  help: setparticlefullcount the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: afParticleCount
+    type: float
+    help: the afParticleCount to be used
+- name: set-particle-palette-texture
+  alias: sppt
+  func: SetParticlePaletteTexture
+  help: setparticlepalettetexture the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: asTextureName
+    type: string
+    help: the asTextureName to be used
+- name: set-particle-persistent-count
+  alias: sppc
+  func: SetParticlePersistentCount
+  help: setparticlepersistentcount the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: afParticleCount
+    type: float
+    help: the afParticleCount to be used
+- name: set-particle-shader-texture
+  alias: spst
+  func: SetParticleShaderTexture
+  help: setparticleshadertexture the provided arguments
+  args:
+  - name: akEffectShader
+    type: effectshader
+    help: the akEffectShader to be used
+  - name: asTextureName
+    type: string
+    help: the asTextureName to be used
+- name: add-magic-effect-to-enchantment
+  alias: amete
+  func: AddMagicEffectToEnchantment
+  help: addmagiceffecttoenchantment the provided arguments
+  args:
+  - name: akEnchantment
+    type: enchantment
+    help: the akEnchantment to be used
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: afMagnitude
+    type: float
+    help: the afMagnitude to be used
+  - name: aiArea
+    type: int
+    help: the aiArea to be used
+  - name: aiDuration
+    type: int
+    help: the aiDuration to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+  - name: asConditionList
+    type: string
+    help: the asConditionList to be used
+- name: add-effect-item-to-enchantment
+  alias: aeite
+  func: AddEffectItemToEnchantment
+  help: addeffectitemtoenchantment the provided arguments
+  args:
+  - name: akEnchantment
+    type: enchantment
+    help: the akEnchantment to be used
+  - name: akEnchantmentToCopyFrom
+    type: enchantment
+    help: the akEnchantmentToCopyFrom to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+- name: remove-magic-effect-from-enchantment
+  alias: rmefe
+  func: RemoveMagicEffectFromEnchantment
+  help: removemagiceffectfromenchantment the provided arguments
+  args:
+  - name: akEnchantment
+    type: enchantment
+    help: the akEnchantment to be used
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: afMagnitude
+    type: float
+    help: the afMagnitude to be used
+  - name: aiArea
+    type: int
+    help: the aiArea to be used
+  - name: aiDuration
+    type: int
+    help: the aiDuration to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+- name: remove-effect-item-from-enchantment
+  alias: reife
+  func: RemoveEffectItemFromEnchantment
+  help: removeeffectitemfromenchantment the provided arguments
+  args:
+  - name: akEnchantment
+    type: enchantment
+    help: the akEnchantment to be used
+  - name: akEnchantmentToMatchFrom
+    type: enchantment
+    help: the akEnchantmentToMatchFrom to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+- name: set-record-flag
+  alias: srf
+  func: SetRecordFlag
+  help: setrecordflag the provided arguments
+  args:
+  - name: akForm
+    type: form
+    help: the akForm to be used
+  - name: aiFlag
+    type: int
+    help: the aiFlag to be used
+- name: add-keyword-to-form
+  alias: aktf
+  func: AddKeywordToForm
+  help: addkeywordtoform the provided arguments
+  args:
+  - name: akForm
+    type: form
+    help: the akForm to be used
+  - name: akKeyword
+    type: keyword
+    help: the akKeyword to be used
+- name: remove-condition-list
+  alias: rcl
+  func: RemoveConditionList
+  help: removeconditionlist the provided arguments
+  args:
+  - name: akForm
+    type: form
+    help: the akForm to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+  - name: asConditionList
+    type: string
+    help: the asConditionList to be used
+- name: set-condition-list
+  alias: scl
+  func: SetConditionList
+  help: setconditionlist the provided arguments
+  args:
+  - name: akForm
+    type: form
+    help: the akForm to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+  - name: asConditionList
+    type: string
+    help: the asConditionList to be used
+- name: set-local-gravity
+  alias: slg
+  func: SetLocalGravity
+  help: setlocalgravity the provided arguments
+  args:
+  - name: afXAxis
+    type: float
+    help: the afXAxis to be used
+  - name: afYAxis
+    type: float
+    help: the afYAxis to be used
+  - name: afZAxis
+    type: float
+    help: the afZAxis to be used
+- name: set-hazard-art
+  alias: sha
+  func: SetHazardArt
+  help: sethazardart the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: asPath
+    type: string
+    help: the asPath to be used
+- name: set-hazard-flag
+  alias: shf
+  func: SetHazardFlag
+  help: sethazardflag the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: aiFlag
+    type: int
+    help: the aiFlag to be used
+- name: set-hazard-i-m-o-d
+  alias: shimod
+  func: SetHazardIMOD
+  help: sethazardimod the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: akIMOD
+    type: imagespacemodifier
+    help: the akIMOD to be used
+- name: set-hazard-i-m-o-d-radius
+  alias: shimodr
+  func: SetHazardIMODRadius
+  help: sethazardimodradius the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: afRadius
+    type: float
+    help: the afRadius to be used
+- name: set-hazard-i-p-d-s
+  alias: shipds
+  func: SetHazardIPDS
+  help: sethazardipds the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: akIPDS
+    type: impactdataset
+    help: the akIPDS to be used
+- name: set-hazard-lifetime
+  alias: shl
+  func: SetHazardLifetime
+  help: sethazardlifetime the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: afLifetime
+    type: float
+    help: the afLifetime to be used
+- name: set-hazard-light
+  alias: shl
+  func: SetHazardLight
+  help: sethazardlight the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: akLight
+    type: light
+    help: the akLight to be used
+- name: set-hazard-limit
+  alias: shl
+  func: SetHazardLimit
+  help: sethazardlimit the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: aiLimit
+    type: int
+    help: the aiLimit to be used
+- name: set-hazard-radius
+  alias: shr
+  func: SetHazardRadius
+  help: sethazardradius the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: afRadius
+    type: float
+    help: the afRadius to be used
+- name: set-hazard-sound
+  alias: shs
+  func: SetHazardSound
+  help: sethazardsound the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: akSound
+    type: sounddescriptor
+    help: the akSound to be used
+- name: set-hazard-spell
+  alias: shs
+  func: SetHazardSpell
+  help: sethazardspell the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: akspell
+    type: spell
+    help: the akspell to be used
+- name: set-hazard-target-interval
+  alias: shti
+  func: SetHazardTargetInterval
+  help: sethazardtargetinterval the provided arguments
+  args:
+  - name: akHazard
+    type: hazard
+    help: the akHazard to be used
+  - name: afInterval
+    type: float
+    help: the afInterval to be used
+- name: set-light-color
+  alias: slc
+  func: SetLightColor
+  help: setlightcolor the provided arguments
+  args:
+  - name: akLight
+    type: light
+    help: the akLight to be used
+  - name: akColorform
+    type: colorform
+    help: the akColorform to be used
+- name: set-light-fade
+  alias: slf
+  func: SetLightFade
+  help: setlightfade the provided arguments
+  args:
+  - name: akLight
+    type: light
+    help: the akLight to be used
+  - name: afRange
+    type: float
+    help: the afRange to be used
+- name: set-light-f-o-v
+  alias: slfov
+  func: SetLightFOV
+  help: setlightfov the provided arguments
+  args:
+  - name: akLight
+    type: light
+    help: the akLight to be used
+  - name: afFOV
+    type: float
+    help: the afFOV to be used
+- name: set-light-radius
+  alias: slr
+  func: SetLightRadius
+  help: setlightradius the provided arguments
+  args:
+  - name: akLight
+    type: light
+    help: the akLight to be used
+  - name: afRadius
+    type: float
+    help: the afRadius to be used
+- name: set-light-r-g-b
+  alias: slrgb
+  func: SetLightRGB
+  help: setlightrgb the provided arguments
+  args:
+  - name: akLight
+    type: light
+    help: the akLight to be used
+  - name: aiRGB
+    type: int
+    help: the aiRGB to be used
+- name: set-light-shadow-depth-bias
+  alias: slsdb
+  func: SetLightShadowDepthBias
+  help: setlightshadowdepthbias the provided arguments
+  args:
+  - name: akLightObject
+    type: objectreference
+    help: the akLightObject to be used
+  - name: afDepthBias
+    type: float
+    help: the afDepthBias to be used
+- name: set-light-type
+  alias: slt
+  func: SetLightType
+  help: setlighttype the provided arguments
+  args:
+  - name: akLight
+    type: light
+    help: the akLight to be used
+  - name: aiLightType
+    type: int
+    help: the aiLightType to be used
+- name: set-parent-location
+  alias: spl
+  func: SetParentLocation
+  help: setparentlocation the provided arguments
+  args:
+  - name: akLoc
+    type: location
+    help: the akLoc to be used
+  - name: akNewLoc
+    type: location
+    help: the akNewLoc to be used
+- name: set-associated-form
+  alias: saf
+  func: SetAssociatedForm
+  help: setassociatedform the provided arguments
+  args:
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: akForm
+    type: form
+    help: the akForm to be used
+- name: set-magic-effect-sound
+  alias: smes
+  func: SetMagicEffectSound
+  help: setmagiceffectsound the provided arguments
+  args:
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: akSoundDescriptor
+    type: sounddescriptor
+    help: the akSoundDescriptor to be used
+  - name: aiType
+    type: int
+    help: the aiType to be used
+- name: add-all-items-to-list
+  alias: aaitl
+  func: AddAllItemsToList
+  help: addallitemstolist the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: akList
+    type: formlist
+    help: the akList to be used
+  - name: abNoEquipped
+    type: bool
+    help: the abNoEquipped to be used
+  - name: abNoFavorited
+    type: bool
+    help: the abNoFavorited to be used
+  - name: abNoQuestItem
+    type: bool
+    help: the abNoQuestItem to be used
+- name: add-items-of-type-to-list
+  alias: aiottl
+  func: AddItemsOfTypeToList
+  help: additemsoftypetolist the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: akList
+    type: formlist
+    help: the akList to be used
+  - name: aiFormType
+    type: int
+    help: the aiFormType to be used
+  - name: abNoEquipped
+    type: bool
+    help: the abNoEquipped to be used
+  - name: abNoFavorited
+    type: bool
+    help: the abNoFavorited to be used
+  - name: abNoQuestItem
+    type: bool
+    help: the abNoQuestItem to be used
+- name: add-keyword-to-ref
+  alias: aktr
+  func: AddKeywordToRef
+  help: addkeywordtoref the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: akKeyword
+    type: keyword
+    help: the akKeyword to be used
+- name: remove-all-mod-items
+  alias: rami
+  func: RemoveAllModItems
+  help: removeallmoditems the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: asModName
+    type: string
+    help: the asModName to be used
+  - name: abOnlyUnequip
+    type: bool
+    help: the abOnlyUnequip to be used
+- name: set-base-object
+  alias: sbo
+  func: SetBaseObject
+  help: setbaseobject the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: akBaseObject
+    type: form
+    help: the akBaseObject to be used
+- name: set-collision-layer
+  alias: scl
+  func: SetCollisionLayer
+  help: setcollisionlayer the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: asNodeName
+    type: string
+    help: the asNodeName to be used
+  - name: aiCollisionLayer
+    type: int
+    help: the aiCollisionLayer to be used
+- name: set-effect-shader-duration
+  alias: sesd
+  func: SetEffectShaderDuration
+  help: seteffectshaderduration the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: akShader
+    type: effectshader
+    help: the akShader to be used
+  - name: afTime
+    type: float
+    help: the afTime to be used
+  - name: abAbsolute
+    type: bool
+    help: the abAbsolute to be used
+- name: set-linked-ref
+  alias: slr
+  func: SetLinkedRef
+  help: setlinkedref the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: akTargetRef
+    type: objectreference
+    help: the akTargetRef to be used
+  - name: akKeyword
+    type: keyword
+    help: the akKeyword to be used
+- name: set-material-type
+  alias: smt
+  func: SetMaterialType
+  help: setmaterialtype the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: asNewMaterial
+    type: string
+    help: the asNewMaterial to be used
+  - name: asOldMaterial
+    type: string
+    help: the asOldMaterial to be used
+  - name: asNodeName
+    type: string
+    help: the asNodeName to be used
+- name: setup-body-part-geometry
+  alias: sbpg
+  func: SetupBodyPartGeometry
+  help: setupbodypartgeometry the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: akActor
+    type: actor
+    help: the akActor to be used
+- name: set-shader-type
+  alias: sst
+  func: SetShaderType
+  help: setshadertype the provided arguments
+  args:
+  - name: akRef
+    type: objectreference
+    help: the akRef to be used
+  - name: akTemplate
+    type: objectreference
+    help: the akTemplate to be used
+  - name: asDiffusePath
+    type: string
+    help: the asDiffusePath to be used
+  - name: aiShaderType
+    type: int
+    help: the aiShaderType to be used
+  - name: aiTextureType
+    type: int
+    help: the aiTextureType to be used
+  - name: abNoWeapons
+    type: bool
+    help: the abNoWeapons to be used
+  - name: abNoAlphaProperty
+    type: bool
+    help: the abNoAlphaProperty to be used
+- name: add-package-idle
+  alias: api
+  func: AddPackageIdle
+  help: addpackageidle the provided arguments
+  args:
+  - name: akPackage
+    type: package
+    help: the akPackage to be used
+  - name: akIdle
+    type: idle
+    help: the akIdle to be used
+- name: remove-package-idle
+  alias: rpi
+  func: RemovePackageIdle
+  help: removepackageidle the provided arguments
+  args:
+  - name: akPackage
+    type: package
+    help: the akPackage to be used
+  - name: akIdle
+    type: idle
+    help: the akIdle to be used
+- name: add-magic-effect-to-potion
+  alias: ametp
+  func: AddMagicEffectToPotion
+  help: addmagiceffecttopotion the provided arguments
+  args:
+  - name: akPotion
+    type: potion
+    help: the akPotion to be used
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: afMagnitude
+    type: float
+    help: the afMagnitude to be used
+  - name: aiArea
+    type: int
+    help: the aiArea to be used
+  - name: aiDuration
+    type: int
+    help: the aiDuration to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+  - name: asConditionList
+    type: string
+    help: the asConditionList to be used
+- name: add-effect-item-to-potion
+  alias: aeitp
+  func: AddEffectItemToPotion
+  help: addeffectitemtopotion the provided arguments
+  args:
+  - name: akPotion
+    type: potion
+    help: the akPotion to be used
+  - name: akPotionToCopyFrom
+    type: potion
+    help: the akPotionToCopyFrom to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+- name: remove-magic-effect-from-potion
+  alias: rmefp
+  func: RemoveMagicEffectFromPotion
+  help: removemagiceffectfrompotion the provided arguments
+  args:
+  - name: akPotion
+    type: potion
+    help: the akPotion to be used
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: afMagnitude
+    type: float
+    help: the afMagnitude to be used
+  - name: aiArea
+    type: int
+    help: the aiArea to be used
+  - name: aiDuration
+    type: int
+    help: the aiDuration to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+- name: remove-effect-item-from-potion
+  alias: reifp
+  func: RemoveEffectItemFromPotion
+  help: removeeffectitemfrompotion the provided arguments
+  args:
+  - name: akPotion
+    type: potion
+    help: the akPotion to be used
+  - name: akPotionToMatchFrom
+    type: potion
+    help: the akPotionToMatchFrom to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+- name: set-projectile-gravity
+  alias: spg
+  func: SetProjectileGravity
+  help: setprojectilegravity the provided arguments
+  args:
+  - name: akProjectile
+    type: projectile
+    help: the akProjectile to be used
+  - name: afGravity
+    type: float
+    help: the afGravity to be used
+- name: set-projectile-impact-force
+  alias: spif
+  func: SetProjectileImpactForce
+  help: setprojectileimpactforce the provided arguments
+  args:
+  - name: akProjectile
+    type: projectile
+    help: the akProjectile to be used
+  - name: afImpactForce
+    type: float
+    help: the afImpactForce to be used
+- name: set-projectile-range
+  alias: spr
+  func: SetProjectileRange
+  help: setprojectilerange the provided arguments
+  args:
+  - name: akProjectile
+    type: projectile
+    help: the akProjectile to be used
+  - name: afRange
+    type: float
+    help: the afRange to be used
+- name: set-projectile-speed
+  alias: sps
+  func: SetProjectileSpeed
+  help: setprojectilespeed the provided arguments
+  args:
+  - name: akProjectile
+    type: projectile
+    help: the akProjectile to be used
+  - name: afSpeed
+    type: float
+    help: the afSpeed to be used
+- name: add-magic-effect-to-scroll
+  alias: amets
+  func: AddMagicEffectToScroll
+  help: addmagiceffecttoscroll the provided arguments
+  args:
+  - name: akScroll
+    type: scroll
+    help: the akScroll to be used
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: afMagnitude
+    type: float
+    help: the afMagnitude to be used
+  - name: aiArea
+    type: int
+    help: the aiArea to be used
+  - name: aiDuration
+    type: int
+    help: the aiDuration to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+  - name: asConditionList
+    type: string
+    help: the asConditionList to be used
+- name: add-effect-item-to-scroll
+  alias: aeits
+  func: AddEffectItemToScroll
+  help: addeffectitemtoscroll the provided arguments
+  args:
+  - name: akScroll
+    type: scroll
+    help: the akScroll to be used
+  - name: akScrollToCopyFrom
+    type: scroll
+    help: the akScrollToCopyFrom to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+- name: remove-magic-effect-from-scroll
+  alias: rmefs
+  func: RemoveMagicEffectFromScroll
+  help: removemagiceffectfromscroll the provided arguments
+  args:
+  - name: akScroll
+    type: scroll
+    help: the akScroll to be used
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: afMagnitude
+    type: float
+    help: the afMagnitude to be used
+  - name: aiArea
+    type: int
+    help: the aiArea to be used
+  - name: aiDuration
+    type: int
+    help: the aiDuration to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+- name: remove-effect-item-from-scroll
+  alias: reifs
+  func: RemoveEffectItemFromScroll
+  help: removeeffectitemfromscroll the provided arguments
+  args:
+  - name: akScroll
+    type: scroll
+    help: the akScroll to be used
+  - name: akScrollToMatchFrom
+    type: scroll
+    help: the akScrollToMatchFrom to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+- name: set-sound-descriptor
+  alias: ssd
+  func: SetSoundDescriptor
+  help: setsounddescriptor the provided arguments
+  args:
+  - name: akSound
+    type: sound
+    help: the akSound to be used
+  - name: akSoundDescriptor
+    type: sounddescriptor
+    help: the akSoundDescriptor to be used
+- name: add-magic-effect-to-spell
+  alias: amets
+  func: AddMagicEffectToSpell
+  help: addmagiceffecttospell the provided arguments
+  args:
+  - name: akSpell
+    type: spell
+    help: the akSpell to be used
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: afMagnitude
+    type: float
+    help: the afMagnitude to be used
+  - name: aiArea
+    type: int
+    help: the aiArea to be used
+  - name: aiDuration
+    type: int
+    help: the aiDuration to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+  - name: asConditionList
+    type: string
+    help: the asConditionList to be used
+- name: add-effect-item-to-spell
+  alias: aeits
+  func: AddEffectItemToSpell
+  help: addeffectitemtospell the provided arguments
+  args:
+  - name: akSpell
+    type: spell
+    help: the akSpell to be used
+  - name: akSpellToCopyFrom
+    type: spell
+    help: the akSpellToCopyFrom to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+- name: remove-magic-effect-from-spell
+  alias: rmefs
+  func: RemoveMagicEffectFromSpell
+  help: removemagiceffectfromspell the provided arguments
+  args:
+  - name: akSpell
+    type: spell
+    help: the akSpell to be used
+  - name: akMagicEffect
+    type: magiceffect
+    help: the akMagicEffect to be used
+  - name: afMagnitude
+    type: float
+    help: the afMagnitude to be used
+  - name: aiArea
+    type: int
+    help: the aiArea to be used
+  - name: aiDuration
+    type: int
+    help: the aiDuration to be used
+  - name: afCost
+    type: float
+    help: the afCost to be used
+- name: remove-effect-item-from-spell
+  alias: reifs
+  func: RemoveEffectItemFromSpell
+  help: removeeffectitemfromspell the provided arguments
+  args:
+  - name: akSpell
+    type: spell
+    help: the akSpell to be used
+  - name: akSpellToMatchFrom
+    type: spell
+    help: the akSpellToMatchFrom to be used
+  - name: aiIndex
+    type: int
+    help: the aiIndex to be used
+- name: set-spell-casting-type
+  alias: ssct
+  func: SetSpellCastingType
+  help: setspellcastingtype the provided arguments
+  args:
+  - name: akSpell
+    type: spell
+    help: the akSpell to be used
+  - name: aiType
+    type: int
+    help: the aiType to be used
+- name: set-spell-delivery-type
+  alias: ssdt
+  func: SetSpellDeliveryType
+  help: setspelldeliverytype the provided arguments
+  args:
+  - name: akSpell
+    type: spell
+    help: the akSpell to be used
+  - name: aiType
+    type: int
+    help: the aiType to be used
+- name: set-spell-type
+  alias: sst
+  func: SetSpellType
+  help: setspelltype the provided arguments
+  args:
+  - name: akSpell
+    type: spell
+    help: the akSpell to be used
+  - name: aiType
+    type: int
+    help: the aiType to be used
+- name: set-art-object
+  alias: sao
+  func: SetArtObject
+  help: setartobject the provided arguments
+  args:
+  - name: akEffect
+    type: visualeffect
+    help: the akEffect to be used
+  - name: akArt
+    type: art
+    help: the akArt to be used
