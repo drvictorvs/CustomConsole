@@ -1,9 +1,19 @@
-import re
+import os, re
 import yaml
 
+# ---
+# Customize this area
+# ---
+psc_file = '/bla/blabla.psc'
+psc_filename = os.path.splitext(os.path.basename(psc_file))[0]
+output_name = psc_filename.replace('Script', '').strip('-_ ') + '-utils'
+output_file = '/bla/blabla/' + output_name + '.yaml'
+# ---
+# End customize
+# ---
 
 def convert_function_to_yaml(function_line, named_arguments):
-  match = re.match(r'Function (\w+)\((.*)\)', function_line)
+  match = re.search(r'[Ff]unction (\w+)\((.*)\)', function_line)
   if not match:
     return None
 
@@ -15,7 +25,7 @@ def convert_function_to_yaml(function_line, named_arguments):
     arg = arg.strip()
 
     if len(arg.split()) > 2:
-      print(arg.split())
+      print('INFO Argument has default value: ' + arg.split().__str__())
 
     if len(arg.split()) > 1:
       arg_type, arg_name = arg.split()[0:2]
@@ -42,7 +52,7 @@ def convert_function_to_yaml(function_line, named_arguments):
   yaml_structure = {
       'name': re.sub(r'([A-Z])', '-\\1', func_name).lower().strip('-'),
       'alias': alias,
-      'func': func_name,
+      'unc': func_name,
       'help': f'{func_name.lower().replace("-", " ")} the provided arguments',
       'args': args
   }
@@ -57,28 +67,23 @@ def convert_psc_to_yaml(psc_file, yaml_file, yaml_data, named_arguments):
   subs = yaml_data['subs']
   for line in lines:
     line = line.strip()
-    if line.startswith('Function') and any(
-        line.startswith(f'Function {prefix}')
-        for prefix in ['Get', 'Set', 'Add', 'Remove', 'Create']):
+    if any('unction ' + prefix in line for prefix in [
+        'Get', 'Set', 'Add', 'Remove', 'Create', 'Equip', 'Is', 'Activate',
+        'Count', 'Update', 'Improve'
+    ]):
       yaml_structure = convert_function_to_yaml(line, named_arguments)
       if yaml_structure:
         subs.append(yaml_structure)
-
+  print(f'Saving {output_file}...')
   with open(yaml_file, 'w') as file:
     yaml.dump(yaml_data, file, sort_keys=False)
 
-# ---
-# Customize this area
-# ---
 yaml_data = {
-    'name': 'quest-utils',
-    'alias': 'qu',
-    'script': 'Quest',
-    'help': 'utilities from Quest',
+    'name': output_name,
+    'alias': ''.join([word[0] for word in re.findall(r'[A-Z][a-z]*|[a-z]+', output_name)]).lower(),
+    'script': psc_filename,
+    'help': 'utilities from ' + psc_filename,
     'subs': []
 }
 
-convert_psc_to_yaml(
-    'Quest.psc',
-    'questutils.yaml',
-    yaml_data, False)
+convert_psc_to_yaml(psc_file, output_file, yaml_data, False)
